@@ -1,5 +1,5 @@
 <?php
-require("helpers/functions.php");
+require("utils/helpers/functions.php");
 /** Get connexion with database
 */
 function getPDO(): PDO
@@ -85,5 +85,24 @@ function getGame(): array
  }
  
  return $game;
+}
+/** This function delete an item
+*/
+
+function delete(): void
+{
+$pdo = getPDO();
+$id = getId();
+// 3- requette vers BDD
+$sql = "DELETE FROM jeux WHERE id=?";
+//4- prepare ma requette
+$query = $pdo->prepare($sql);
+// 5- on execute le requette
+$query->execute([$id]);
+//redirect
+//6- redirection
+$_SESSION["success"] = "Le jeu es bien supprimer.";
+header("location:index.php");
+
 }
 
