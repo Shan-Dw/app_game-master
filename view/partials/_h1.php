@@ -1,1 +1,1 @@
-<h1 class="text-blue-500 text-5xl  text-uppercase font-black text-center"><?= $main_title ?></h1>
+<h1 class="text-red-800 text-5xl  text-uppercase font-black text-center"><?= $main_title ?></h1>

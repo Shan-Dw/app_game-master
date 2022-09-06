@@ -5,11 +5,11 @@
         <?php $main_title = "App Game";
         include("_h1.php")
         ?>
-        <p class="pt-5">L'app qui repertorie vos jeux</p>
+        <p class="pt-5 text-white">L'application qui répertorie vos jeux préférés...</p>
 
         <!--Add Game -->
         <div class="pt-16 pb-16">
-            <a href="addGame.php" class="btn bg-blue-500">Ajouter un jeu</a>
+            <a href="addGame.php" class="btn bg-black border-0">Ajouter un jeu</a>
         </div>
 
         <?php require_once("_alert.php") ?>
