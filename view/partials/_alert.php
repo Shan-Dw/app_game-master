@@ -1,6 +1,6 @@
    <?php
 
-    // je verifie que session error et vide ou pas
+    // check if session error is empty or not
     if (!empty($_SESSION["error"])) { ?>
        <div class="alert alert-error shadow-lg">
            <div>

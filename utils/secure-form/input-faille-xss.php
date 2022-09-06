@@ -1,5 +1,5 @@
 <?php
-//2-je fais les failles xss
+
 $name = clear_xss($_POST["name"]);
 $price = clear_xss($_POST["price"]);
 $note = clear_xss($_POST["note"]);
@@ -19,4 +19,10 @@ foreach ($plateforms as $plateform) {
 };
 
 $PEGI = !empty($_POST["PEGI"]) ? clear_xss($_POST["PEGI"]) : [];
+
+if (!empty($img_upload_path)) {
 $url_img = $img_upload_path;
+
+} else {
+    $error["url_img"] = "<span class=text-red-500>*Choisissez un fichier</span>";
+}
