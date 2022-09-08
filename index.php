@@ -5,7 +5,7 @@ session_start();
 // include PDO for DB connexion
 require_once("models/Game.php");
 $model = new Game();
-$games = $model->getAllGames();
+$games = $model->getAll();
 
 require("view/homePage.php")
 ?>

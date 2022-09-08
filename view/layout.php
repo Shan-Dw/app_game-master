@@ -14,9 +14,9 @@
 <body class="bg-zinc-900">
     <div class="navbar bg-zinc-800 justify-between py-4 items-center">
         <a class="btn btn-ghost normal-case text-3xl mx-24 text-black font-extrabold" href="index.php">App<span class="text-3xl text-red-800">Game</span></a>
-        <button class="btn gap-1 bg-black border-0 mr-8">
+        <a href="user.php" class="btn gap-1 bg-black border-0 mr-8 hover:scale-90" style="transition: 0.8s;">
           Connexion
-        </button>
+        </a>
     </div>
     <main class="px-24">
     <?= $content ?>

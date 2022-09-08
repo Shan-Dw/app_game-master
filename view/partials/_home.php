@@ -2,14 +2,22 @@
 <div class="pt-16 wrap_content">
     <!-- head content -->
     <div class="wrap_content-head text-center">
-        <?php $main_title = "App Game";
+        <?php $main_title = "AppGame";
         include("_h1.php")
         ?>
-        <p class="pt-5 text-white">L'application qui répertorie vos jeux préférés...</p>
+        <p class="pt-5 text-white text-2xl font-bold">L'application qui répertorie vos jeux préférés...</p>
+        <label class="swap swap-flip text-8xl mt-8">
+  
+      <!-- this hidden checkbox controls the state -->
+          <input type="checkbox" />
+      
+          <div class="swap-on">😈</div>
+          <div class="swap-off">😇</div>
+        </label>
 
         <!--Add Game -->
         <div class="pt-16 pb-16">
-            <a href="addGame.php" class="btn bg-black border-0">Ajouter un jeu</a>
+            <a href="addGame.php" class="btn bg-black border-0 hover:scale-125" style="transition: 0.8s;">Ajouter un jeu</a>
         </div>
 
         <?php require_once("_alert.php") ?>
@@ -20,15 +28,15 @@
         <table class="table w-full ">
             <thead>
                 <tr>
-                    <th>#</th>
-                    <th>Nom</th>
-                    <th>Genre</th>
-                    <th>Plateform</th>
-                    <th>prix</th>
-                    <th>PEGI</th>
-                    <th>Voir</th>
-                    <th>Modifier</th>
-                    <th>Supprimer</th>
+                    <th class="bg-black text-white">#</th>
+                    <th class="bg-black text-white">Nom</th>
+                    <th class="bg-black text-white">Genre</th>
+                    <th class="bg-black text-white">Plateform</th>
+                    <th class="bg-black text-white">prix</th>
+                    <th class="bg-black text-white">PEGI</th>
+                    <th class="bg-black text-white">Voir</th>
+                    <th class="bg-black text-white">Modifier</th>
+                    <th class="bg-black text-white">Supprimer</th>
                 </tr>
             </thead>
             <tbody>
@@ -38,20 +46,20 @@
                     echo " <tr><td class='text-center'> Pas de jeux disponible actuellement</td> </tr>";
                 } else { ?>
                     <?php foreach ($games as $game) : ?>
-                        <tr class="hover:text-blue-500 ">
-                            <th class="text-blue-500 font-black"> <?= $index++ ?> </th>
-                            <td><a href="show.php?id=<?= $game['id'] ?>&name=<?= $game['name'] ?>"><?= $game['name'] ?></a></td>
-                            <td><?= $game['genre'] ?></td>
-                            <td><?= $game['plateforms'] ?></td>
-                            <td><?= $game['price'] ?></td>
-                            <td><?= $game['PEGI'] ?></td>
-                            <td>
+                        <tr class="hover:text-red-600">
+                            <th class="bg-zinc-800 text-red-800 font-black"> <?= $index++ ?> </th>
+                            <td class="bg-zinc-800 text-white"><a href="show.php?id=<?= $game['id'] ?>&name=<?= $game['name'] ?>"><?= $game['name'] ?></a></td>
+                            <td class="bg-zinc-800 text-white"><?= $game['genre'] ?></td>
+                            <td class="bg-zinc-800 text-white"><?= $game['plateforms'] ?></td>
+                            <td class="bg-zinc-800 text-white"><?= $game['price'] ?></td>
+                            <td class="bg-zinc-800 text-white"><?= $game['PEGI'] ?></td>
+                            <td class="bg-zinc-800 text-white">
                                 <a href="show.php?id=<?= $game['id'] ?>&name=<?= $game['name'] ?>">
                                     <img src="public/img/oeil.png" alt="eye" class="w-4">
                                 </a>
                             </td>
-                            <td><a href="update.php?id=<?= $game["id"] ?>&name=<?= $game["name"] ?>" class="btn btn-success text-white">Modifier</a></td>
-                            <td><?php include("_modal.php") ?></td>
+                            <td class="bg-zinc-800 text-white"><a href="update.php?id=<?= $game["id"] ?>&name=<?= $game["name"] ?>" class="btn btn-success text-white">Modifier</a></td>
+                            <td class="bg-zinc-800 text-white"><?php include("_modal.php") ?></td>
                         </tr>
                     <?php endforeach ?>
                 <?php } ?>

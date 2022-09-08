@@ -1,4 +1,6 @@
 <?php
 session_start();
-include("models/database.php");
-delete();
+require_once("models/Game.php");
+$model = new Game();
+$model->delete();
+

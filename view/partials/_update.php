@@ -1,5 +1,5 @@
 <div class="pt-10">
-    <a href="index.php" class="text-blue-500 text-sm">
+    <a href="index.php" class="text-black font-bold text-sm">
         <- retour </a>
             <?php $main_title = "Modifier le jeu";
             include("view/partials/_h1.php")
@@ -7,7 +7,7 @@
             <form action="" method="POST" class="grid place-items-center bg-gray-100 mx-96 py-10 my-16 gap-y-4 rounded-xl" enctype="multipart/form-data">
                 <!--input name  -->
                 <div class="mb-4">
-                    <label for="name" class="font-semibold text-blue-500">name</label>
+                    <label for="name" class="font-semibold text-red-800">name</label>
                     <input type="text" name="name" class="input input-bordered w-full max-w-xs block" value="<?= $game["name"]
                                                                                                                 ?>" />
                     <p>
@@ -20,7 +20,7 @@
                 </div>
                 <!--input price  -->
                 <div class="mb-4">
-                    <label for="price" class="font-semibold text-blue-500">Prix</label>
+                    <label for="price" class="font-semibold text-red-800">Prix</label>
                     <input type="number" step="0.01" name="price" class="input input-bordered w-full max-w-xs block" value="<?=
                                                                                                                             $game["price"]  ?>" />
                     <p>
@@ -33,7 +33,7 @@
                 </div>
                 <!--input note  -->
                 <div class="mb-4">
-                    <label for="note" class="font-semibold text-blue-500">Note</label>
+                    <label for="note" class="font-semibold text-red-800">Note</label>
                     <input type="number" step="0.01" name="note" class="input input-bordered w-full max-w-xs block" value="<?=
                                                                                                                             $game["note"]  ?>" />
                     <p>
@@ -46,7 +46,7 @@
                 </div>
                 <!--input description  -->
                 <div class="mb-4 ">
-                    <label for="description" class="font-semibold text-blue-500">Description</label>
+                    <label for="description" class="font-semibold text-red-800">Description</label>
                     <textarea name="description" class="textarea textarea-bordered block"><?=
                                                                                             $game["description"] ?></textarea>
                     <p>
@@ -69,12 +69,12 @@
                 $arr_genre = explode("|", $game["genre"]);
                 ?>
 
-                <h2 class="font-semibold text-blue-500 ">Genre</h2>
+                <h2 class="font-semibold text-red-800 ">Genre</h2>
                 <div class="mb-4 flex space-x-6">
                     <?php foreach ($genreArray as $genre) : ?>
                         <div class="flex item-center space-x-3">
                             <label><?= $genre["name"] ?></label>
-                            <input type="checkbox" class="checkbox checkbox-primary bg-white" name="genre[]" value="<?= $genre["name"] ?>" <?php
+                            <input type="checkbox" class="checkbox bg-white" name="genre[]" value="<?= $genre["name"] ?>" <?php
                                                                                                                                             if (in_array($genre["name"], $arr_genre)) echo "checked";
                                                                                                                                             ?> />
                         </div>
@@ -98,12 +98,12 @@
                 // new array avec explode 
                 $arr_plateforms = explode("|", $game["plateforms"]);
                 ?>
-                <h2 class="font-semibold text-blue-500 ">Plateform</h2>
+                <h2 class="font-semibold text-red-800 ">Plateform</h2>
                 <div class="mb-4 flex space-x-6">
                     <?php foreach ($plateformArray as $plateform) : ?>
                         <div class="flex item-center space-x-3">
                             <label><?= $plateform["name"] ?></label>
-                            <input type="checkbox" class="checkbox checkbox-primary bg-white" name="plateforms[]" value="<?= $plateform["name"] ?>" <?php
+                            <input type="checkbox" class="checkbox  bg-white" name="plateforms[]" value="<?= $plateform["name"] ?>" <?php
                                                                                                                                                     if (in_array($plateform["name"], $arr_plateforms)) echo "checked";
                                                                                                                                                     ?> />
                         </div>
@@ -126,7 +126,7 @@
                     ["name" => 18],
                 ]
                 ?>
-                <h2 class="font-semibold text-blue-500 ">PEGI</h2>
+                <h2 class="font-semibold text-red-800 ">PEGI</h2>
                 <div class="mb-4">
                     <select name="PEGI" class="select select-bordered w-full max-w-xs">
                         <option disabled selected>choisi un PEGI</option>
@@ -145,7 +145,7 @@
                 </div>
                 <!-- upload image -->
                 <div class="py-3 text-center">
-                    <label for="url_img" class="text-blue-500 font-semibold ">Votre image</label>
+                    <label for="url_img" class="text-red-800 font-semibold ">Votre image</label>
                     <input type="file" class="block pt-3" id="url_img" name="url_img" value="<?=
                                                                                                 $game["url_img"]  ?>">
                     <p>
@@ -160,7 +160,7 @@
                 <input type="hidden" name="id" value="<?= $game["id"] ?>">
                 <!-- submit btn -->
                 <div class="py-5">
-                    <input type="submit" name="submited" value="Modifier" class="btn btn-active btn-primary">
+                    <input type="submit" name="submited" value="Modifier" class="btn btn-active bg-black border-0">
                 </div>
             </form>
 </div>

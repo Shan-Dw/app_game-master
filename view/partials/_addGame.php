@@ -1,13 +1,13 @@
 <section class="py-16 ">
-    <a href="index.php" class="text-blue-500 text-sm">
+    <a href="index.php" class="text-black text-sm font-bold">
         <- retour </a>
             <?php $main_title = "Ajouter un jeu";
             include("view/partials/_h1.php")
             ?>
-            <form action="" method="POST" class="grid place-items-center bg-gray-100 mx-96 py-10 my-16 gap-y-4 rounded-xl" enctype="multipart/form-data">
+            <form action="" method="POST" class="grid place-items-center bg-zinc-800 mx-96 py-10 my-16 gap-y-4 rounded-xl" enctype="multipart/form-data">
                 <!--input name  -->
                 <div class="mb-4">
-                    <label for="name" class="font-semibold text-blue-500">name</label>
+                    <label for="name" class="font-semibold text-red-800">name</label>
                     <input type="text" name="name" class="input input-bordered w-full max-w-xs block" value="<?php
                                                                                                                 if (!empty($_POST["name"])) {
                                                                                                                     echo $_POST["name"];
@@ -22,7 +22,7 @@
                 </div>
                 <!--input price  -->
                 <div class="mb-4">
-                    <label for="price" class="font-semibold text-blue-500">Prix</label>
+                    <label for="price" class="font-semibold text-red-800">Prix</label>
                     <input type="number" step="0.01" name="price" class="input input-bordered w-full max-w-xs block" value="<?php
                                                                                                                             if (!empty($_POST["price"])) {
                                                                                                                                 echo $_POST["price"];
@@ -37,7 +37,7 @@
                 </div>
                 <!--input note  -->
                 <div class="mb-4">
-                    <label for="note" class="font-semibold text-blue-500">Note</label>
+                    <label for="note" class="font-semibold text-red-800">Note</label>
                     <input type="number" step="0.01" name="note" class="input input-bordered w-full max-w-xs block" value="<?php
                                                                                                                             if (!empty($_POST["note"])) {
                                                                                                                                 echo $_POST["note"];
@@ -52,7 +52,7 @@
                 </div>
                 <!--input description  -->
                 <div class="mb-4 ">
-                    <label for="description" class="font-semibold text-blue-500">Description</label>
+                    <label for="description" class="font-semibold text-red-800">Description</label>
                     <textarea name="description" class="textarea textarea-bordered block"><?php
                                                                                             if (!empty($_POST["description"])) {
                                                                                                 echo $_POST["description"];
@@ -74,12 +74,12 @@
                     ["name" => "FPS"],
                 ]
                 ?>
-                <h2 class="font-semibold text-blue-500 ">Genre</h2>
+                <h2 class="font-semibold text-red-800 ">Genre</h2>
                 <div class="mb-4 flex space-x-6">
                     <?php foreach ($genreArray as $genre) : ?>
                         <div class="flex item-center space-x-3">
                             <label><?= $genre["name"] ?></label>
-                            <input type="checkbox" class="checkbox checkbox-primary bg-white" name="genre[]" value="<?= $genre["name"] ?>" <?php if (!empty($_POST["genre"])) {
+                            <input type="checkbox" class="checkbox checkbox-error bg-white" name="genre[]" value="<?= $genre["name"] ?>" <?php if (!empty($_POST["genre"])) {
                                                                                                                                                 if (in_array($genre["name"], $_POST["genre"])) echo "checked";
                                                                                                                                             } ?> />
                         </div>
@@ -101,12 +101,12 @@
                     ["name" => "Xbox"],
                 ]
                 ?>
-                <h2 class="font-semibold text-blue-500 ">Plateform</h2>
+                <h2 class="font-semibold text-red-800 ">Plateform</h2>
                 <div class="mb-4 flex space-x-6">
                     <?php foreach ($plateformArray as $plateform) : ?>
                         <div class="flex item-center space-x-3">
                             <label><?= $plateform["name"] ?></label>
-                            <input type="checkbox" class="checkbox checkbox-primary bg-white" name="plateforms[]" value="<?= $plateform["name"] ?>" <?php if (!empty($_POST["plateforms"])) {
+                            <input type="checkbox" class="checkbox checkbox-error bg-white" name="plateforms[]" value="<?= $plateform["name"] ?>" <?php if (!empty($_POST["plateforms"])) {
                                                                                                                                                         if (in_array($plateform["name"], $_POST["plateforms"])) echo "checked";
                                                                                                                                                     } ?> />
                         </div>
@@ -129,7 +129,7 @@
                     ["name" => 18],
                 ]
                 ?>
-                <h2 class="font-semibold text-blue-500 ">PEGI</h2>
+                <h2 class="font-semibold text-red-800 ">PEGI</h2>
                 <div class="mb-4">
                     <select name="PEGI" class="select select-bordered w-full max-w-xs">
                         <option disabled selected>choisi un PEGI</option>
@@ -153,7 +153,7 @@
 
                 <!-- upload image -->
                 <div class="py-3 text-center">
-                    <label for="url_img" class="text-blue-500 font-semibold ">Votre image</label>
+                    <label for="url_img" class="text-red-800 font-semibold ">Votre image</label>
                     <input type="file" class="block pt-3" id="url_img" name="url_img">
                     <p>
                         <?php
@@ -166,7 +166,7 @@
 
                 <!-- submit btn -->
                 <div class="py-5">
-                    <input type="submit" name="submited" value="Ajouter" class="btn btn-active btn-primary">
+                    <input type="submit" name="submited" value="Ajouter" class="btn btn-active bg-black border-0">
                 </div>
             </form>
 </section>
